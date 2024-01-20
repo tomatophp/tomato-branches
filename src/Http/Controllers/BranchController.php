@@ -76,7 +76,7 @@ class BranchController extends Controller
                 'branch_number' => 'nullable|integer',
                 'address' => 'nullable|max:255|string'
             ],
-            message: __('Branch updated successfully'),
+            message: __('tomato-branches::global.branches.messages.created'),
             redirect: 'admin.branches.index',
         );
 
@@ -128,7 +128,7 @@ class BranchController extends Controller
                 'branch_number' => 'nullable|integer',
                 'address' => 'nullable|max:255|string'
             ],
-            message: __('Branch updated successfully'),
+            message: __('tomato-branches::global.branches.messages.updated'),
             redirect: 'admin.branches.index',
         );
 
@@ -147,7 +147,7 @@ class BranchController extends Controller
     {
         $response = Tomato::destroy(
             model: $model,
-            message: __('Branch deleted successfully'),
+            message: __('tomato-branches::global.branches.messages.deleted'),
             redirect: 'admin.branches.index',
         );
 

@@ -65,23 +65,23 @@ class BranchTable extends AbstractTable
             ->defaultSort('id', 'desc')
             ->column(
                 key: 'id',
-                label: __('Id'),
+                label: __('tomato-branches::global.branches.id'),
                 hidden: true,
                 sortable: true
             )
             ->column(
                 key: 'branch_number',
-                label: __('Branch Number'),
+                label: __('tomato-branches::global.branches.branch_number'),
                 sortable: true
             )
             ->column(
                 key: 'company.name',
-                label: __('Company'),
+                label: __('tomato-branches::global.branches.single'),
                 sortable: true
             )
             ->column(
                 key: 'name',
-                label: __('Name'),
+                label: __('tomato-branches::global.branches.name'),
                 sortable: true
             )
             ->column(key: 'actions',label: trans('tomato-admin::global.crud.actions'))
@@ -97,7 +97,7 @@ class BranchTable extends AbstractTable
                 $table->bulkAction(
                     label: trans('tomato-admin::global.crud.delete'),
                     each: fn (\TomatoPHP\TomatoBranches\Models\Branch $model) => $model->delete(),
-                    after: fn () => Toast::danger(__('Branch Has Been Deleted'))->autoDismiss(2),
+                    after: fn () => Toast::danger(__('tomato-branches::global.branches.messages.deleted'))->autoDismiss(2),
                     confirm: true
                 );
             }
@@ -106,7 +106,7 @@ class BranchTable extends AbstractTable
             $table->bulkAction(
                 label: trans('tomato-admin::global.crud.delete'),
                 each: fn (\TomatoPHP\TomatoBranches\Models\Branch $model) => $model->delete(),
-                after: fn () => Toast::danger(__('Branch Has Been Deleted'))->autoDismiss(2),
+                after: fn () => Toast::danger(__('tomato-branches::global.branches.messages.deleted'))->autoDismiss(2),
                 confirm: true
             );
             $table->export();

@@ -1,10 +1,10 @@
 <x-tomato-admin-layout>
     <x-slot:header>
-        {{ __('Company') }}
+        {{ __('tomato-branches::global.companies.single') }}
     </x-slot:header>
     <x-slot:buttons>
         <x-tomato-admin-button :modal="true" :href="route('admin.companies.create')" type="link">
-            {{trans('tomato-admin::global.crud.create-new')}} {{__('Company')}}
+            {{trans('tomato-admin::global.crud.create-new')}} {{__('tomato-branches::global.companies.single')}}
         </x-tomato-admin-button>
     </x-slot:buttons>
 

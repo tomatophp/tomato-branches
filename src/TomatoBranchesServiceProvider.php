@@ -56,13 +56,13 @@ class TomatoBranchesServiceProvider extends ServiceProvider
     {
         TomatoMenu::register([
             Menu::make()
-                ->group(__('Branches'))
-                ->label(__('Companies'))
+                ->group(__('tomato-branches::global.menu.branches'))
+                ->label(__('tomato-branches::global.menu.companies'))
                 ->icon('bx bxs-building')
                 ->route('admin.companies.index'),
             Menu::make()
-                ->group(__('Branches'))
-                ->label(__('Branches'))
+                ->group(__('tomato-branches::global.menu.branches'))
+                ->label(__('tomato-branches::global.menu.branches'))
                 ->icon('bx bxs-home-smile')
                 ->route('admin.branches.index'),
         ]);

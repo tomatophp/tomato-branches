@@ -64,18 +64,18 @@ class CompanyTable extends AbstractTable
             ->defaultSort('id', 'desc')
             ->column(
                 key: 'id',
-                label: __('Id'),
+                label: __('tomato-branches::global.companies.id'),
                 hidden: false,
                 sortable: true
             )
             ->column(
                 key: 'country.name',
-                label: __('Country'),
+                label: __('tomato-branches::global.companies.single'),
                 sortable: true
             )
             ->column(
                 key: 'name',
-                label: __('Name'),
+                label: __('tomato-branches::global.companies.name'),
                 sortable: true
             )
             ->column(key: 'actions',label: trans('tomato-admin::global.crud.actions'))
@@ -89,7 +89,7 @@ class CompanyTable extends AbstractTable
                 $table->bulkAction(
                     label: trans('tomato-admin::global.crud.delete'),
                     each: fn (\TomatoPHP\TomatoBranches\Models\Company $model) => $model->delete(),
-                    after: fn () => Toast::danger(__('Company Has Been Deleted'))->autoDismiss(2),
+                    after: fn () => Toast::danger(__('tomato-branches::global.companies.messages.deleted'))->autoDismiss(2),
                     confirm: true
                 );
             }
@@ -98,7 +98,7 @@ class CompanyTable extends AbstractTable
             $table->bulkAction(
                 label: trans('tomato-admin::global.crud.delete'),
                 each: fn (\TomatoPHP\TomatoBranches\Models\Company $model) => $model->delete(),
-                after: fn () => Toast::danger(__('Company Has Been Deleted'))->autoDismiss(2),
+                after: fn () => Toast::danger(__('tomato-branches::global.companies.messages.deleted'))->autoDismiss(2),
                 confirm: true
             );
             $table->export();

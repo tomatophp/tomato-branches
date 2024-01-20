@@ -4,9 +4,6 @@ namespace TomatoPHP\TomatoBranches\Console;
 
 use Illuminate\Console\Command;
 use TomatoPHP\ConsoleHelpers\Traits\RunCommand;
-use TomatoPHP\TomatoBranches\Models\Branch;
-use TomatoPHP\TomatoBranches\Models\Company;
-use TomatoPHP\TomatoLocations\Models\Country;
 
 class TomatoBranchesInstall extends Command
 {
@@ -42,34 +39,6 @@ class TomatoBranchesInstall extends Command
         $this->info('Publish Vendor Assets');
         $this->artisanCommand(["migrate"]);
         $this->artisanCommand(["optimize:clear"]);
-        $checkIfCompanyExists = Company::count();
-        if($checkIfCompanyExists < 1){
-            $company = Company::create([
-                'country_id' => Country::first()?->id,
-                'name' => "main company",
-                'ceo' => "CEO",
-                'address' => "Cairo, Egypt",
-                'city' => "Cairo",
-                'zip' => "110821",
-                'email' => "info@3x1.io",
-                'phone' => "+201207860084",
-                'website'=> "https://docs.tomatophp.com"
-            ]);
-        }
-        else {
-            $company = Company::first();
-        }
-
-        $checkIfBranchExists = Branch::count();
-        if($checkIfBranchExists < 1){
-            $branch = Branch::create([
-                "name" => "main branch",
-                'company_id' => $company->id,
-                'branch_number' => "001",
-                'phone' => "+201207860084",
-                'address' => "Cairo, Egypt"
-            ]);
-        }
         $this->info('Tomato Branches installed successfully.');
     }
 }

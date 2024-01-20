@@ -78,7 +78,7 @@ class CompanyController extends Controller
                 'website' => 'nullable|max:255|string',
                 'notes' => 'nullable|max:65535'
             ],
-            message: __('Company updated successfully'),
+            message: __('tomato-branches::global.companies.messages.created'),
             redirect: 'admin.companies.index',
             hasMedia: true,
             collection: [
@@ -150,7 +150,7 @@ class CompanyController extends Controller
                 'website' => 'nullable|max:255|string',
                 'notes' => 'nullable|max:65535'
             ],
-            message: __('Company updated successfully'),
+            message: __('tomato-branches::global.companies.messages.updated'),
             redirect: 'admin.companies.index',
             hasMedia: true,
             collection: [
@@ -173,7 +173,7 @@ class CompanyController extends Controller
     {
         $response = Tomato::destroy(
             model: $model,
-            message: __('Company deleted successfully'),
+            message: __('tomato-branches::global.companies.messages.deleted'),
             redirect: 'admin.companies.index',
         );
 

@@ -1,10 +1,10 @@
 <x-tomato-admin-layout>
     <x-slot:header>
-        {{ __('Branch') }}
+        {{ __('tomato-branches::global.branches.single') }}
     </x-slot:header>
     <x-slot:buttons>
         <x-tomato-admin-button :modal="true" :href="route('admin.branches.create')" type="link">
-            {{trans('tomato-admin::global.crud.create-new')}} {{__('Branch')}}
+            {{trans('tomato-admin::global.crud.create-new')}} {{__('tomato-branches::global.branches.single')}}
         </x-tomato-admin-button>
     </x-slot:buttons>
 
