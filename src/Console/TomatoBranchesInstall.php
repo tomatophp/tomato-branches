@@ -46,7 +46,7 @@ class TomatoBranchesInstall extends Command
         if($checkIfCompanyExists < 1){
             $company = Company::create([
                 'country_id' => Country::first()?->id,
-                'name' => "main company",
+                'name' => "3x1",
                 'ceo' => "CEO",
                 'address' => "Cairo, Egypt",
                 'city' => "Cairo",
@@ -63,7 +63,7 @@ class TomatoBranchesInstall extends Command
         $checkIfBranchExists = Branch::count();
         if($checkIfBranchExists < 1){
             $branch = Branch::create([
-                "name" => "main branch",
+                "name" => "Main",
                 'company_id' => $company->id,
                 'branch_number' => "001",
                 'phone' => "+201207860084",
