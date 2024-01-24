@@ -72,7 +72,7 @@ class BranchController extends Controller
             validation: [
                 'name' => 'required|max:255|string|unique:branches,name',
                 'company_id' => 'required|integer|exists:companies,id',
-                'phone' => 'nullable|max:255|min:12',
+                'phone' => 'nullable|max:255',
                 'branch_number' => 'nullable|integer',
                 'address' => 'nullable|max:255|string'
             ],
@@ -124,7 +124,7 @@ class BranchController extends Controller
             validation: [
                 'name' => 'sometimes|max:255|string|unique:branches,name,'.$model->id,
                 'company_id' => 'required|integer|exists:companies,id',
-                'phone' => 'nullable|max:255|min:12',
+                'phone' => 'nullable|max:255',
                 'branch_number' => 'nullable|integer',
                 'address' => 'nullable|max:255|string'
             ],

@@ -1,5 +1,5 @@
 <x-tomato-admin-container label="{{trans('tomato-admin::global.crud.create')}} {{__('Company')}}">
-    <x-splade-form class="flex flex-col space-y-4" action="{{route('admin.companies.store')}}" method="post">
+    <x-splade-form :default="['country_id' => setting('local_country')]" class="flex flex-col space-y-4" action="{{route('admin.companies.store')}}" method="post">
 
         <x-splade-file filepond preview name="logo" />
           <x-splade-select
