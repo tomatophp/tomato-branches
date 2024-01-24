@@ -12,11 +12,11 @@
         <div class="mx-auto">
             <x-splade-table :for="$table" striped>
                 <x-splade-cell email>
-    <x-tomato-admin-row table type="email" :value="$item->email" />
-</x-splade-cell>
-<x-splade-cell phone>
-    <x-tomato-admin-row table type="tel" :value="$item->phone" />
-</x-splade-cell>
+                    <x-tomato-admin-row table type="email" :value="$item->email" />
+                </x-splade-cell>
+                <x-splade-cell phone>
+                    <x-tomato-admin-row table type="tel" :value="$item->phone" />
+                </x-splade-cell>
 
                 <x-splade-cell actions>
                     <div class="flex justify-start">
