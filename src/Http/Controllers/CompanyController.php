@@ -78,7 +78,7 @@ class CompanyController extends Controller
                 'website' => 'nullable|max:255|string',
                 'notes' => 'nullable|max:65535'
             ],
-            message: __('Company updated successfully'),
+            message: __('Company created successfully'),
             redirect: 'admin.companies.index',
             hasMedia: true,
             collection: [
