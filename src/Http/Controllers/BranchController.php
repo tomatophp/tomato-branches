@@ -76,7 +76,7 @@ class BranchController extends Controller
                 'branch_number' => 'nullable|integer',
                 'address' => 'nullable|max:255|string'
             ],
-            message: __('Branch updated successfully'),
+            message: __('Branch created successfully'),
             redirect: 'admin.branches.index',
         );
 
