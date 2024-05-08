@@ -3,7 +3,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['web','auth', 'splade', 'verified'])->name('admin.')->group(function () {
+Route::middleware(array_merge(['splade', 'auth'], config('tomato-admin.route_middlewares')))->name('admin.')->group(function () {
     Route::get('admin/companies', [\TomatoPHP\TomatoBranches\Http\Controllers\CompanyController::class, 'index'])->name('companies.index');
     Route::get('admin/companies/api', [\TomatoPHP\TomatoBranches\Http\Controllers\CompanyController::class, 'api'])->name('companies.api');
     Route::get('admin/companies/create', [\TomatoPHP\TomatoBranches\Http\Controllers\CompanyController::class, 'create'])->name('companies.create');
@@ -15,7 +15,7 @@ Route::middleware(['web','auth', 'splade', 'verified'])->name('admin.')->group(f
 });
 
 
-Route::middleware(['web','auth', 'splade', 'verified'])->name('admin.')->group(function () {
+Route::middleware(array_merge(['splade', 'auth'], config('tomato-admin.route_middlewares')))->name('admin.')->group(function () {
     Route::get('admin/branches', [\TomatoPHP\TomatoBranches\Http\Controllers\BranchController::class, 'index'])->name('branches.index');
     Route::get('admin/branches/api', [\TomatoPHP\TomatoBranches\Http\Controllers\BranchController::class, 'api'])->name('branches.api');
     Route::get('admin/branches/create', [\TomatoPHP\TomatoBranches\Http\Controllers\BranchController::class, 'create'])->name('branches.create');
